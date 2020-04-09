@@ -36,7 +36,7 @@ export default {
   methods: {
     orderNow() {
       if (this.result.length === 0) {
-        Toast('请选择要付款的项目');
+        Toast('请选择要付款的项目。');
         return;
       }
       const obj = {};
