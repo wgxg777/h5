@@ -362,17 +362,18 @@
       </div>
     </div>
     <div class="flex flex-wrap ml5 mr5">
-      <div class="flex flex-v recommend flex-1">
+      <div class="flex flex-v recommend flex-1" @click="swipeClick()">
         <van-image
           width="3.7rem"
           height="3.7rem"
           fit="cover"
           src="//img.alicdn.com/img/i3/161960079/O1CN01Sirv521CSDs6NZrHM_!!0-saturn_solar.jpg_210x210.jpg"
         />
+
         <div class="mt5" style="text-align:left">面包</div>
         <div class="pay">￥100</div>
       </div>
-      <div class="flex flex-v recommend flex-1">
+      <div class="flex flex-v recommend flex-1"  @click="swipeClick()">
         <van-image
           width="3.7rem"
           height="3.7rem"
@@ -382,7 +383,7 @@
         <div class="mt5" style="text-align:left">鸡翅</div>
         <div class="pay">￥84</div>
       </div>
-      <div class="flex flex-v recommend flex-1">
+      <div class="flex flex-v recommend flex-1"  @click="swipeClick()">
         <van-image
           width="3.7rem"
           height="3.7rem"
@@ -392,7 +393,7 @@
         <div class="mt5" style="text-align:left">金针菇</div>
         <div class="pay">￥100</div>
       </div>
-      <div class="flex flex-v recommend flex-1">
+      <div class="flex flex-v recommend flex-1"  @click="swipeClick()">
         <van-image
           width="3.7rem"
           height="3.7rem"
@@ -427,7 +428,9 @@ export default {
   methods: {
     swipeClick(e) {
       console.log(e);
-      this.$router.push({ path: `/productDetail?id=${e.id}` });
+      if (e) { this.$router.push({ path: `/productDetail?id=${e.id}` }); } else {
+        this.$router.push({ path: '/productDetail?id=16' });
+      }
     },
     onChange() {
       console.log(this.active);
